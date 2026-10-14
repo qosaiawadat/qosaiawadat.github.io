@@ -24,7 +24,10 @@
 <meta property="profile:first_name" content="Qosai">
 <meta property="profile:last_name" content="Awadat">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M0 0h36L28 64H0z' fill='%236A8397'/%3E%3Cpath d='M36 0h28v64H28z' fill='%23A97361'/%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <!-- Social icons: Font Awesome Free, https://fontawesome.com — icons CC BY 4.0. Skylines and the other drawings drawn by hand for this site. The horse on the About page: Eugène Delacroix, Study of a Horse, c. 1825–30, pen and brown ink; The Cleveland Museum of Art, Nancy F. and Joseph P. Keithley Collection Gift, 2020.128, released under CC0. -->
 <script>document.documentElement.className += ' js' + (function () { try { return sessionStorage.getItem('curtain') ? ' curt' : ''; } catch (e) { return ''; } })();</script>
 <script type="application/ld+json">
@@ -49,7 +52,7 @@
         "@id": "https://qosaiawadat.com/#website"
       },
       "dateCreated": "2026-09-25T00:00:00-05:00",
-      "dateModified": "2026-10-13T10:13:39-05:00",
+      "dateModified": "2026-10-13T19:41:02-05:00",
       "mainEntity": {
         "@id": "https://qosaiawadat.com/#person"
       }
@@ -634,6 +637,7 @@ html.replay .split *, html.replay .hero *, html.replay .doors *, html.replay .ba
 .kicker { display: block; font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); margin-bottom: .35rem; }
 .section h2 { font-family: var(--display); text-transform: uppercase; font-weight: 900; font-stretch: 125%; font-size: clamp(2rem, 4.6vw, 3.8rem); line-height: .92; letter-spacing: -.01em; }
 @media (min-width: 60rem) { .section { grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 2rem 4rem; align-items: start; } .section .head { position: sticky; top: 2rem; } }
+.section h2.two { font-size: clamp(1.7rem, 3.3vw, 2.9rem); }   /* v40: a two-word heading (News & Additional) at a size that stays in its column */
 .list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: .15rem 1rem; padding: .75rem 0; border-top: 1px solid var(--line); }
 .list li:last-child { border-bottom: 1px solid var(--line); }
 .list a, .list .soon { font-weight: 500; font-size: 1.25rem; }
@@ -672,10 +676,10 @@ html.replay .split *, html.replay .hero *, html.replay .doors *, html.replay .ba
 .chapter:nth-of-type(1) .art { transform: translateY(-30%); }                /* the sea, up into the open red */
 .chapter:nth-of-type(2) .art { transform: translate(7%, -14%); }             /* Hyde Park, a little higher and to the right */
 .chapter:nth-of-type(4) .artbox { left: 30%; right: -9%; }                   /* the horse comes in from the right edge of the screen... */
-@media (max-width: 48rem) { .chapter:nth-of-type(4) .artbox { left: var(--gutter); right: -10%; } .chapter:nth-of-type(4) .art { transform: translateY(-30%); } .chapter:nth-of-type(4) .art-img { -webkit-mask-size: 82% auto; mask-size: 82% auto; } }   /* v39: smaller, higher, and off the right edge again */
+@media (max-width: 48rem) { .chapter:nth-of-type(2) .art { transform: translate(7%, -18%); } .chapter:nth-of-type(4) .artbox { left: var(--gutter); right: -10%; } .chapter:nth-of-type(4) .art { transform: translateY(-34%); } .chapter:nth-of-type(4) .art-img { -webkit-mask-size: 76% auto; mask-size: 76% auto; } }   /* v40: the park clear of the name; the horse a touch smaller and higher */   /* v39: smaller, higher, and off the right edge again */
 .chapter:nth-of-type(4) .art-img { -webkit-mask-position: right bottom; mask-position: right bottom; }
 .chapter:nth-of-type(4) .art { width: 100%; max-width: none; }                /* ...filling its box, so the composition is the same on a phone and a computer */
-@media (min-width: 48rem) { .chapter:nth-of-type(4) .art { transform: translateY(-27%); } .chapter:nth-of-type(4) .art-img { -webkit-mask-size: 56% auto; mask-size: 56% auto; } }   /* v39: on a wide screen too: smaller, higher, coming out of the right edge */
+@media (min-width: 48rem) { .chapter:nth-of-type(4) .art { transform: translateY(-27%); } .chapter:nth-of-type(4) .art-img { -webkit-mask-size: auto 86%; mask-size: auto 86%; } }   /* v40: sized by height (86% of its box) rather than width, so a short browser window (a MacBook with Safari's bars) no longer cuts the ears off; at 900 px tall it is the v39 size */   /* v39: on a wide screen too: smaller, higher, coming out of the right edge */
 .chapter:nth-of-type(5) .art { transform: translateY(-24%); }                /* the Tree of Life, just above the Infracorp name */
 .art path { vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; }
 .art mask path { vector-effect: none; } .art path[mask] { animation: none !important; stroke-dasharray: none; }   /* v37: a brush stroke is a filled shape revealed by its own mask, which is what draws */
